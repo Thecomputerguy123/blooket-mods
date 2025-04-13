@@ -1,0 +1,27 @@
+// This is a basic example of what a Blooket code mod could look like
+// It manipulates the game's variables and functions to crash the game
+
+// Access the game's global variables
+var game = window.game;
+var gameData = game.gameData;
+
+// Modify the game's variables
+gameData.settings.allowSound = false; // Disable sound
+gameData.settings.allowMusic = false; // Disable music
+gameData.settings.allowChat = false; // Disable chat
+
+// Modify the game's functions
+game.init = function() {
+    throw new Error("Game crashed!");
+};
+
+game.start = function() {
+    throw new Error("Game crashed!");
+};
+
+game.end = function() {
+    throw new Error("Game crashed!");
+};
+
+// This will crash the game
+game.init();
